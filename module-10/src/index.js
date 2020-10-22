@@ -5,6 +5,7 @@ import scrollTo from 'scroll-to';
 import throttle from 'lodash.throttle';
 import slideTemplate from './templates/slide.hbs';
 import imagesList from './scripts/imageList';
+import { MINUTES_IN_MILLISECONDS, HOURS_IN_MILLISECONDS } from './scripts/constants'
 
 const imageListContainer = document.querySelector('.image-list');
 const scrollToButton = document.querySelector('.scroll-to-btn');
