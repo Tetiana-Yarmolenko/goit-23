@@ -1,47 +1,37 @@
 import './styles.scss';
 import 'swiper/swiper.scss';
-import Swiper from 'swiper';
-import scrollTo from 'scroll-to';
-import throttle from 'lodash.throttle';
-import slideTemplate from './templates/slide.hbs';
-import imagesList from './scripts/imageList';
-import { MINUTES_IN_MILLISECONDS, HOURS_IN_MILLISECONDS } from './scripts/constants'
+import initGallery from './scripts/gallery';
+import initHeroList from './scripts/heroesList';
+import user from './scripts/user.json';
+import { get as getItem, add as saveItem } from './scripts/localStorageApi';
 
-const imageListContainer = document.querySelector('.image-list');
-const scrollToButton = document.querySelector('.scroll-to-btn');
-const title = document.querySelector('.super-title');
-const slides = imagesList.reduce((acc, image) => {
-  return acc + slideTemplate(image)
-}, '');
+/** вынес инициализацию галереи в отдельный файл  */
+initGallery();
 
-imageListContainer.innerHTML = slides;
+/** отрисовываем список героев */
+initHeroList();
 
-const mySwiper = new Swiper('.slider', {
-  speed: 400,
-  spaceBetween: 20,
-  slidesPerView: 3
-});
+/** если импортируем файл .json то вебпак автоматически превращает его в js объект */
+console.log(user);
 
-scrollToButton.addEventListener('click', () => {
-  const topPosition = getElementScrollPosition(title);
-  const topMargin = 20;
+// const jsonObject = `{
+//   "name": "Alex",
+//   "salary": 200
+// }`
+// const obj = JSON.parse(jsonObject);
 
-  scrollTo(0, topPosition - topMargin, {
-    ease: 'in-expo',
-    duration: 1500
-  });
-})
+// console.log(obj.name);
+// console.log(JSON.stringify(obj));
 
-const getElementScrollPosition = element => {
-  const { top, bottom, left, right } = element.getBoundingClientRect();
-  const windowScrollTopSize = window.scrollY;
-  console.log(`top: ${top}`);
+// const name = 'First name';
+// localStorage.setItem('name', name);
+// const hero = {
+//   name: 'Zoro',
+//   salary: 0
+// }
 
-  return windowScrollTopSize + top;
-}
+/** используем наш локалсторадж апи для сохранения или чтения данных */
+saveItem('zoro', hero);
 
-const btnScrollDetection = throttle(() => {
-  getElementScrollPosition(scrollToButton)
-}, 300)
-
-// window.addEventListener('scroll', btnScrollDetection)
+const zoro = getItem('zoro');
+console.log(zoro);
