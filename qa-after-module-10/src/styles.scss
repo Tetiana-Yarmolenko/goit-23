@@ -1,0 +1,12 @@
+@import './style/reset.scss';
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  min-height: 300px;
+}
+
