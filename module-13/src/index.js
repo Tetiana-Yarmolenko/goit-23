@@ -58,8 +58,3 @@ const renderApartmentsList = async () => {
 
 registerFormRef.addEventListener('submit', handleRegisterSubmit);
 renderApartmentsList();
-
-axios('https://pixabay.com/api/?key=19116097-91cfda2f798a07cacf5b2db64&q=yellow+flowers&image_type=photo&pretty=true&page=10&per_page=10')
-  .catch(error => {
-    console.dir(error)
-  })

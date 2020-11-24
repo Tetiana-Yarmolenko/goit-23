@@ -39,7 +39,10 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      inject: false,
+      template: './pages/index.html',
+      name: './index.html',
+      chunks: ['homepage'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -48,6 +51,13 @@ module.exports = env => ({
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
       },
+      
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './pages/registration.html',
+      name: './registration.html',
+      chunks: ['registration']
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',

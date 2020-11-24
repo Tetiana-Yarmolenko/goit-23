@@ -50,7 +50,7 @@ module.exports = env => ({
       },
     }),
     new HtmlWebpackPlugin({
-      template: './about.html',
+      template: './pages/about.html',
       filename: 'about.html',
       chunks: ['news']
     }),
