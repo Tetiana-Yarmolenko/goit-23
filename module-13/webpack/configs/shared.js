@@ -10,7 +10,8 @@ module.exports = env => ({
     homepage: './scripts/pages/homepage.js',
     login: './scripts/pages/login.js',
     registration: './scripts/pages/registration.js',
-    orders: './scripts/pages/orders.js'
+    orders: './scripts/pages/orders.js',
+    chat: './scripts/pages/chat.js'
   },
   output: {
     path: paths.BUILD_DIR,

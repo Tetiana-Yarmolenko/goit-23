@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+      <div class="content">
+        ${require('../html/header.html')}
+        <div class="container">
+          <main class="chat">
+            <div class="maps"></div>
+            <div class="messages"></div>
+            <form class="chat-form">
+              <textarea name="message" class="textarea input" type="text"></textarea>
+              <button class="submit-btn" type="submit">Send</button>
+            </form>
+          </main>
+        </div>
+      </div>
+      ${require('../html/footer.html')}
+    </div>
+    <script id="googleMaps" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7Zkwv8ZHein66BAALTpWsJAQorKjiTlw"
+      type="text/javascript" data-id="map" ></script>
+</body>
+</html>

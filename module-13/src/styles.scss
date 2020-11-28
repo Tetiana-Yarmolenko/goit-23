@@ -1,7 +1,11 @@
 @import './style/reset.scss';
+@import './style/variables.scss';
 @import './style/shared/button.scss';
 @import './style/register-form.scss';
 @import './style/apartments-item.scss';
+@import './style/footer.scss';
+@import './style/header.scss';
+@import './style/chat.scss';
 
 body {
   font-family: sans-serif;
@@ -18,9 +22,15 @@ body {
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   background: #2e2e62;
   min-height: 100vh;
+}
+
+.content {
   padding: 50px 0;
+  flex-grow: 1;
 }
 
 .title {

@@ -9,15 +9,19 @@
 
   <body>
     <div class="wrapper">
-      <div class="container">
-        <form class="register-form">
-          <h2 class="register-form__title">Register form</h2>
-          <input class="custom-input" type="text" name="name" placeholder="name">
-          <input class="custom-input" type="text" name="email" placeholder="email*">
-          <input class="custom-input" type="password" name="password" placeholder="password">
-          <button class="submit-btn">Submit</button>
-        </form>
+      <div class="content">
+        ${require('../html/header.html')}
+        <main class="container">
+          <form class="register-form">
+            <h2 class="register-form__title">Register form</h2>
+            <input class="custom-input" type="text" name="name" placeholder="name">
+            <input class="custom-input" type="text" name="email" placeholder="email*">
+            <input class="custom-input" type="password" name="password" placeholder="password">
+            <button class="submit-btn">Submit</button>
+          </form>
+        </main>
       </div>
+      ${require('../html/footer.html')}
     </div>
   </body>
 </html>

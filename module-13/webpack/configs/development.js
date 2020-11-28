@@ -38,6 +38,11 @@ module.exports = env => ({
       template: './pages/my-orders.html',
       filename: 'my-orders.html',
       chunks: ['orders']
+    }),
+    new HtmlWebpackPlugin({
+      template: './pages/chat.html',
+      filename: 'chat.html',
+      chunks: ['chat']
     })
   ],
   devServer: {
